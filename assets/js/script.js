@@ -16,3 +16,11 @@ $(document).ready(function () {
         $(this).addClass("past");
       }
     });
+
+      //grabs values from time and value divs and saves them to local storage
+  $(".saveBtn").click(function (event) {
+    event.preventDefault();
+    var value = $(this).siblings(".time-block").val();
+    var time = $(this).parent().attr("id").split("-")[1];
+    localStorage.setItem(time, value);
+  });
